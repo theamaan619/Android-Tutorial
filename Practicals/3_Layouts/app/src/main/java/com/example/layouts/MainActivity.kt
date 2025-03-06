@@ -1,28 +1,25 @@
 package com.example.layouts
 
 import android.os.Bundle
-import android.widget.Button
-import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.layouts.R.*
-
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+       // setContentView(R.layout.activity_main)
 
-        setContentView(layout.activity_main)
+        setContentView(R.layout.activity_linear)
+        //setContentView(R.layout.activity_relative)
 
-        //Accessing the button with their ID
-        val button1: Button = findViewById(id.button1)
-        val button2: Button = findViewById(id.button2)
 
-        //Setting onClick Listeners for buttons
-        button1.setOnClickListener{
-            Toast.makeText(this,"Button 1 Clicked",Toast.LENGTH_SHORT).show()
-        }
-        button2.setOnClickListener{
-            Toast.makeText(this,"Button 2 Clicked",Toast.LENGTH_SHORT).show()
-        }
+//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+//            insets
+//        }
     }
 }
